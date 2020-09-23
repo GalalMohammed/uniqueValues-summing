@@ -1,34 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+int j=0,n=20;
 int sum(int arr[]){
 int sum=0;
-for (int i=0;i<20;i++)
+for (int i=0;i<j;i++)
 {
     sum+=arr[i];
 }
 return sum;
 }
-
 int main()
 {
-    int i=0,arr[20];
+    int i=0,arr[n];
     printf("Enter 20 numbers (without duplicating):\n");
     for (;i<20;i++)
     {
-        scanf("%d",&arr[i]);
-        for (int k=i-1;k>=0;k--)
+        scanf("%d",&arr[j]);
+        if (i>0)
         {
-            if (arr[i]==arr[k])
+        for (int k=j-1;k>=0;k--)
+        {
+            if (arr[j]==arr[k])
             {
-                printf("Don't duplicate numbers\n");
-                i--;
+                j--;
                 break;
             }
-        }
+        }}
+        j++;
     }
     printf("The values of array are:\n");
-    for (i=0;i<20;i++)
+    for (i=0;i<j;i++)
     {
         printf("%d\t",arr[i]);
     }
